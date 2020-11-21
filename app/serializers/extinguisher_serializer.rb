@@ -1,6 +1,5 @@
 class ExtinguisherSerializer < ActiveModel::Serializer
   
-    attributes :id, :matricola
-    #has_many :fire_extinguishers
+  attributes :id, :matricola
   
-  end
+end

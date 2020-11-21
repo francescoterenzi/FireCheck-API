@@ -37,7 +37,14 @@ module V1
       @parameter = search_params
       @companies = Company.all.where(
         "lower(name) LIKE :q", q: "%#{@parameter}%")
-      json_response(@companies)
+        
+      res = {
+        "total_count" => @companies.size,
+        "companies" => @companies
+      } 
+
+      json_response(res)
+
     end
 
     private
