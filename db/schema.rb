@@ -36,7 +36,9 @@ ActiveRecord::Schema.define(version: 2021_01_28_100151) do
     t.index ["company_id"], name: "index_extinguishers_on_company_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :string, force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
