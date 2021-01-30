@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2021_01_28_100151) do
   end
 
   create_table "controls", force: :cascade do |t|
-    t.bigint "user_id"
+    t.string "user_id"
     t.bigint "extinguisher_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["extinguisher_id"], name: "index_controls_on_extinguisher_id"
     t.index ["user_id"], name: "index_controls_on_user_id"
   end
