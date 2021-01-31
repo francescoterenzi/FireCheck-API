@@ -16,7 +16,8 @@ class ExtinguishersController < ApplicationController
 
   # GET /extinguishers/:id
   def show
-    json_response(@extinguisher)
+    render json: @extinguisher, include:
+    [:company]
   end
 
   # PUT /extinguishers/:id
@@ -35,7 +36,7 @@ class ExtinguishersController < ApplicationController
 
   def extinguisher_params
     # whitelist params
-    params.permit(:matricola, :company_id)
+    params.permit(:id, :matricola, :company_id)
   end
 
   def set_extinguisher

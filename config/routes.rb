@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :extinguishers, only: [:show, :create, :update] do
+  resources :extinguishers do
     resources :controls, module: :extinguishers, only: [:index, :create]
   end
 
