@@ -5,12 +5,14 @@ class Users::ControlsController < ApplicationController
   
     # GET /users/:user_id/controls
     def index
-      json_response(@user.controls)
+      render json: @user.controls, include:
+        [:extinguisher => {:only => [:matricola]}]
     end
   
     # GET /users/:user_id/controls/:id
     def show
-      json_response(@control)
+      render json: @control, include:
+        [:extinguisher => {:only => [:matricola]}]
     end
   
     # DELETE /users/:user_id/controls/:id

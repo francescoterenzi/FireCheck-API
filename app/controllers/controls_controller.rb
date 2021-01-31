@@ -8,7 +8,7 @@ class ControlsController < ApplicationController
         json_response(@control, :created)
     end
 
-    # GET /companies/:id
+    # GET /controls/:id
     def show
         json_response(@control)
     end
