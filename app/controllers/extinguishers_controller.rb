@@ -36,7 +36,7 @@ class ExtinguishersController < ApplicationController
 
   def extinguisher_params
     # whitelist params
-    params.permit(:id, :matricola, :company_id)
+    params.permit(:id, :typology, :weight, :company_id)
   end
 
   def set_extinguisher

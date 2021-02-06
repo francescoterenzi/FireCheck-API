@@ -15,30 +15,35 @@ ActiveRecord::Schema.define(version: 2021_01_28_100151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
+  create_table "companies", id: :string, force: :cascade do |t|
     t.string "name"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "controls", force: :cascade do |t|
+    t.string "date_of_control"
     t.string "user_id"
-    t.bigint "extinguisher_id"
+    t.string "extinguisher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["extinguisher_id"], name: "index_controls_on_extinguisher_id"
     t.index ["user_id"], name: "index_controls_on_user_id"
   end
 
-  create_table "extinguishers", force: :cascade do |t|
-    t.string "matricola"
-    t.bigint "company_id"
+  create_table "extinguishers", id: :string, force: :cascade do |t|
+    t.string "typology"
+    t.string "weight"
+    t.string "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_extinguishers_on_company_id"
   end
 
   create_table "users", id: :string, force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

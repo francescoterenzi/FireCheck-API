@@ -28,7 +28,7 @@ class ControlsController < ApplicationController
     private
 
     def control_params
-        params.permit(:id, :user_id, :extinguisher_id)
+        params.permit(:id, :date_of_control, :user_id, :extinguisher_id)
     end
 
     def set_control

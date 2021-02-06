@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def user_params
     # whitelist params
-    params.permit(:id)
+    params.permit(:id, :first_name, :last_name)
   end
 
   def set_user

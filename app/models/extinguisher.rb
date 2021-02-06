@@ -4,8 +4,8 @@ class Extinguisher < ApplicationRecord
   has_many :controls
 
   #validation
-  validates_presence_of :matricola
-  validates_presence_of :company_id
-
+  validates_presence_of :id
+  validates_presence_of :weight
+  validates_presence_of :typology
 
 end
