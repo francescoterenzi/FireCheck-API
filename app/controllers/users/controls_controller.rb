@@ -5,34 +5,12 @@ class Users::ControlsController < ApplicationController
   
     # GET /users/:user_id/controls
     def index
-      render :json => @user.controls.to_json(
-        :include => { 
-          :extinguisher => {
-            :include => { 
-              :company => {
-                :only => [:id, :name]
-              }           
-            },
-            :only => [:id, :matricola]
-          } 
-        },
-        :only => :id)
+      json_response(@user.controls)
     end
   
     # GET /users/:user_id/controls/:id
     def show
-      render :json => @control.to_json(
-        :include => { 
-          :extinguisher => {
-            :include => { 
-              :company => {
-                :only => [:id, :name]
-              }           
-            },
-            :only => [:id, :matricola]
-          } 
-        },
-        :only => :id)
+      json_response(@control)
     end
   
     # DELETE /users/:user_id/controls/:id
