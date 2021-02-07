@@ -54,7 +54,7 @@ class CompaniesController < ApplicationController
 
   def company_params
     # whitelist params
-    params.permit(:name)
+    params.permit(:id, :name, :address)
   end
 
   def set_company
